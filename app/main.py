@@ -5,7 +5,7 @@ import plotly.express as px
 # Load the CSV file
 @st.cache_data
 def load_data():
-    file_path = "BRCA.csv"  # Ensure the file is in the same directory
+    file_path = "public/BRCA.csv"  # Ensure the file is in the same directory
     df = pd.read_csv(file_path)
 
     # Convert dates
