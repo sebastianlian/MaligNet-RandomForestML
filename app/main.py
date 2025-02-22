@@ -2,6 +2,11 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+
+st.set_page_config(page_title = "BRCA Data", page_icon = ":bar_chart:", layout = "wide")
+
+st.title(" :bar_chart: BRCA Data Visualization")
+
 # Load the CSV file
 @st.cache_data
 def load_data():
@@ -17,7 +22,7 @@ def load_data():
 df = load_data()
 
 # Title
-st.title("BRCA Data Visualization")
+
 
 # Sidebar for user interaction
 st.sidebar.header("Filter Options")
