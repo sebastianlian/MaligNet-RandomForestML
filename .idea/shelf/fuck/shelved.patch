@@ -1,0 +1,19 @@
+Index: app/main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import streamlit as st\r\nimport pandas as pd\r\nimport plotly.express as px\r\n\r\n# Load the CSV file\r\n@st.cache_data\r\ndef load_data():\r\n    file_path = \"public/BRCA.csv\"  # Ensure the file is in the same directory\r\n    df = pd.read_csv(file_path)\r\n\r\n    # Convert dates\r\n    df[\"Date_of_Surgery\"] = pd.to_datetime(df[\"Date_of_Surgery\"], errors='coerce')\r\n    df[\"Date_of_Last_Visit\"] = pd.to_datetime(df[\"Date_of_Last_Visit\"], errors='coerce')\r\n\r\n    return df\r\n\r\ndf = load_data()\r\n\r\n# Title\r\nst.title(\"BRCA Data Visualization\")\r\n\r\n# Sidebar for user interaction\r\nst.sidebar.header(\"Filter Options\")\r\nselected_tumor_stage = st.sidebar.multiselect(\r\n    \"Select Tumor Stage:\",\r\n    options=df[\"Tumour_Stage\"].dropna().unique(),\r\n    default=df[\"Tumour_Stage\"].dropna().unique()\r\n)\r\n\r\nfiltered_df = df[df[\"Tumour_Stage\"].isin(selected_tumor_stage)]\r\n\r\n# 1. Age Distribution\r\nst.subheader(\"Age Distribution\")\r\nfig_age = px.histogram(df, x=\"Age\", nbins=20, marginal=\"box\", title=\"Age Distribution\", color_discrete_sequence=[\"teal\"])\r\nst.plotly_chart(fig_age)\r\n\r\n# 2. Tumor Stage Distribution\r\nst.subheader(\"Tumor Stage Distribution\")\r\nfig_tumor = px.bar(df[\"Tumour_Stage\"].value_counts(), title=\"Tumor Stage Distribution\", color_discrete_sequence=[\"orange\"])\r\nst.plotly_chart(fig_tumor)\r\n\r\n# 3. Surgery Type Distribution\r\nst.subheader(\"Surgery Type Distribution\")\r\nfig_surgery = px.bar(df[\"Surgery_type\"].value_counts(), title=\"Surgery Type Distribution\", color_discrete_sequence=[\"blue\"])\r\nst.plotly_chart(fig_surgery)\r\n\r\n# 4. Protein Levels by Tumor Stage\r\nst.subheader(\"Protein Levels by Tumor Stage\")\r\nfig_protein = px.box(filtered_df, x=\"Tumour_Stage\", y=\"Protein1\", title=\"Protein1 Levels by Tumor Stage\", color=\"Tumour_Stage\")\r\nst.plotly_chart(fig_protein)\r\n\r\n# 5. Patient Status Breakdown\r\nst.subheader(\"Patient Status Breakdown\")\r\nfig_status = px.pie(df, names=\"Patient_Status\", title=\"Patient Status Breakdown\", color_discrete_sequence=[\"lightblue\", \"salmon\"])\r\nst.plotly_chart(fig_status)\r\n\r\n# Run the app using: `streamlit run app.py`\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/main.py b/app/main.py
+--- a/app/main.py	(revision b400aba670cc4d28537473ef543248e76dc1fc3d)
++++ b/app/main.py	(date 1740203482695)
+@@ -5,7 +5,7 @@
+ # Load the CSV file
+ @st.cache_data
+ def load_data():
+-    file_path = "public/BRCA.csv"  # Ensure the file is in the same directory
++    file_path = "../public/BRCA.csv"  # Ensure the file is in the same directory
+     df = pd.read_csv(file_path)
+ 
+     # Convert dates
