@@ -84,7 +84,7 @@ We focused on three **major components**:
 
 ## ** Backend Development Video Explanation**
 
-[![Watch the Backend Explanation](https://img.youtube.com/vi/Nr8mY4-Lj20/0.jpg)](https://youtu.be/Nr8mY4-Lj20)
+[![Watch the Backend Explanation](https://img.youtube.com/vi/Nr8mY4-Lj20/0.jpg)]([https://youtu.be/Nr8mY4-Lj20](https://youtu.be/ECB91mVgiTM))
 
 ---
 
