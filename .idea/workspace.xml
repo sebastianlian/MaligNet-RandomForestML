@@ -5,20 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8302ff69-f6d8-4941-ad00-6c2830c740ad" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/MaligNet.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/fuck.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/fuck/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/app/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/db/setup_mongo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/models/random_forest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/models/linear_regression.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/models/linear_regression.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/models/random_forest.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/models/random_forest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +69,7 @@
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "sebastian-DA",
+    "git-widget-placeholder": "deploy-streamlit",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/lian0/IdeaProjects/MaligNet/src/backend/data",
     "node.js.detected.package.eslint": "true",
@@ -123,7 +115,7 @@
       <updated>1740199669253</updated>
       <workItem from="1740199671184" duration="7680000" />
       <workItem from="1740243827329" duration="27409000" />
-      <workItem from="1740286738147" duration="2411000" />
+      <workItem from="1740286738147" duration="14527000" />
     </task>
     <task id="LOCAL-00001" summary="linear regression model v1">
       <option name="closed" value="true" />
@@ -141,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740272094870</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add updated code">
+      <option name="closed" value="true" />
+      <created>1740291106607</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1740291106607</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +151,8 @@
     <MESSAGE value="fuck" />
     <MESSAGE value="linear regression model v1" />
     <MESSAGE value="create the route for the random forest results" />
-    <option name="LAST_COMMIT_MESSAGE" value="create the route for the random forest results" />
+    <MESSAGE value="add updated code" />
+    <option name="LAST_COMMIT_MESSAGE" value="add updated code" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
