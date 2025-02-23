@@ -12,6 +12,8 @@ DATA_PATH = os.path.join(BASE_DIR, "data", "BRCA.csv")
 # Load dataset
 df = pd.read_csv(DATA_PATH)
 
+print("IN LINEAR_REGRESSION.PY")
+
 # Rename only the necessary columns
 df = df.rename(columns={
     "Age": "Age",
@@ -47,6 +49,7 @@ df = df[columns_needed].dropna()  # Remove missing values
 
 # Define the independent variables (X) and dependent variable (y)
 features = [
+    # x and ys
     (["Age", "Protein1", "Protein2", "Protein3", "Protein4"], "RiskOfDeath"),  # Age + All Proteins
     (["Age", "Stage"], "RiskOfDeath"),  # Age + Stage
     (["Age", "Histology"], "RiskOfDeath")  # Age + Histology
@@ -73,16 +76,29 @@ for feature_set, target in features:
     r2 = r2_score(y_test, y_pred)
 
     # Store results
+    # This is saying that the model are not fitting the data well. The features may not be strong predictors of RiskOfDeath, or there is a data scaling issue
     results[f"{' + '.join(feature_set)} → RiskOfDeath"] = {
+        # shows the relationship between each feature and RiskOfDeath
         "Coefficients": model.coef_.tolist(),
+
+        # The predicted value of the RiskOfDeath when all features are 0
         "Intercept": model.intercept_,
+
+        # How far prediction are from actual values (the lower the better)
         "Mean Squared Error": mse,
+
+        #  1.0 -> perfect correlation, 0.0 -> no correlation, negative values -> performs worse than random choice
         "R-squared Score": r2
     }
 
 # Print results for debugging
-print("Regression Analysis Complete:", results)
+# print("Regression Analysis Complete:", results)
 
-print(df.shape)
+# print(df.shape)
 
 print(df.corr()["RiskOfDeath"])
+# Protein 2 and Protein 4 have the highest correlation with RiskOfDeath (0.083, 0.079)
+# Stage is weakly correlated (0.0529) wit RiskOfDeath, which suggest it might not be a strong preditor
+# Age has almost no correlation (0.0109), meaning it does not contribute significantly to predicting RiskOfDeath
+# Histology has a negative weak correlation (-0.0140), meaning it's not a strong predictor
+# All correlations are low (close to 0), this means that the current features are not a strong prediction of RiskOfDeath
